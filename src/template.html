@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Carousel</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .carousel {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+      .slides {
+        display: none;
+      }
+
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .carousel .slides img {
+        width: 100%;
+      }
+
+      .next,
+      .previous {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .previous:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .caption {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px, 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .carousel-dots {
+        text-align: center;
+      }
+
+      .active,
+      .dot:hover {
+        background: #717171;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="slides fade">
+        <img
+          src="https://images.unsplash.com/photo-1737079026600-18f07b9dd0a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+        <div class="caption">Trees + Mountains</div>
+      </div>
+
+      <div class="slides fade">
+        <img
+          src="https://images.unsplash.com/photo-1656489782764-443559c29211?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+        <div class="caption">Arctic</div>
+      </div>
+
+      <div class="slides fade">
+        <img
+          src="https://images.unsplash.com/photo-1733169312713-fd0c6963487a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+        <div class="caption">Ocean + Mountains</div>
+      </div>
+
+      <div class="slides fade">
+        <img
+          src="https://images.unsplash.com/photo-1736210811075-7509d5023a4a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+        <div class="caption">Galaxy</div>
+      </div>
+
+      <a class="previous">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <br />
+
+    <div class="carousel-dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </body>
+</html>
